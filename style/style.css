@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Tiny5&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Ga+Maamli&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tiny5&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap');
 
 * {
@@ -12,10 +11,11 @@
 :root {
     --green: #006c39;
     --red: #FF0303;
+    --hover: #F5E6CC;
 }
 
-.active {
-    text-shadow: 1px 1px 4px black;
+.active h4 {
+    color: var(--hover);
 }
 
 .green-border {
@@ -58,13 +58,30 @@
     column-gap: 1em;
 }
 
-.quickAccess a {
+.effect {
     text-decoration: none;
     color: black;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
 
-.quickAccess a:hover {
-    text-shadow: 1px 1px 4px black;
+.effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease-in-out;
+}
+
+.effect:hover {
+    color: #F5E6CC;
+}
+
+.effect:hover::after {
+    width: 100%;
 }
 
 .quickAccess li {
@@ -121,32 +138,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 1em;
-    flex-direction: column;
+    column-gap: .5em;
 }
 
 .bottom a {
     text-decoration: none;
-    color: black;
 }
 
-.bottom .phone,
-.bottom .email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.bottom .icon img:hover {
+.bottom .icon svg:hover {
     transform: scale(0.9);
     transition: transform 0.2s ease;
-}
-
-.bottom img {
-    width: 25px;
-    height: fit-content;
-    margin-right: 0.5em;
 }
 
 .services {
@@ -253,7 +254,7 @@
 .miniBframe1 {
     top: 0;
     left: 0;
-    clip-path: polygon(1% 2%, 99% 2%,95% 98%, 1% 98%);
+    clip-path: polygon(1% 2%, 99% 2%, 95% 98%, 1% 98%);
 }
 
 .Bframe1 {
@@ -302,7 +303,7 @@
 }
 
 .currPage {
-    font-family: "Sour Gummy", sans-serif;
+    font-family: "Faculty Glyphic", sans-serif;
     width: 100%;
     display: flex;
     align-items: center;
